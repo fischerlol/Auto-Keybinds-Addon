@@ -1,0 +1,9 @@
+## Interface: 30402
+## Title: Auto Keybind
+## Version: 1.0.00
+## Notes: Automatically binds abilities to keys on login
+## DefaultState: Enabled
+## SavedVariables: AutoKeybind_Account
+## SavedVariablesPerCharacter: AutoKeybind_Character
+
+main.xml
