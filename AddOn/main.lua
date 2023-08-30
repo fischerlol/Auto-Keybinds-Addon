@@ -32,12 +32,63 @@ auto_keybind.bars = {
     action_bar_five
 }
 
+action_paging = {
+    'ACTIONPAGE1', 'ACTIONPAGE2', 'ACTIONPAGE3', 'ACTIONPAGE4', 'ACTIONPAGE5', 'PREVIOUSACTIONBAR', 'NEXTACTIONBAR'
+}
+
+movement = {
+    'MOVEFORWARD', 'MOVEBACKWARD', 'TURNLEFT', 'TURNRIGHT', 'JUMP'
+}
+
 on_login_frame:SetScript("OnEvent", function(self, event, ...)
     if event == "PLAYER_LOGIN" then
+        -- bind keys
         auto_keybind.set_keybinds()
+
+        -- unbind primary action paging keys
+        auto_keybind.unbind_keys(action_paging, true, true)
+
+        -- unbind secondary movement keys
+        auto_keybind.unbind_keys(movement, false, true)
+
+        -- bind guild pane
+        auto_keybind.bind_specific_key('TOGGLEGUILDPANE', 'J', false)
+
+        -- bind auto run
+        auto_keybind.bind_specific_key('TOGGLEAUTORUN', 'NUMPAD5', true)
+
         print("Keybinds Set!")
     end
 end)
+
+function auto_keybind.bind_specific_key(action, keybind, is_secondary)
+    local key_1, key_2 = GetBindingKey(action)
+
+    if not is_secondary or not key_1 then
+        SetBinding(keybind, action)
+    else
+        if key_2 then
+            SetBinding(key_2)
+        end
+        SetBinding(keybind, action)
+    end
+
+    SaveBindings(2)
+end
+
+function auto_keybind.unbind_keys(group, primary, secondary)
+    for _, keybind in ipairs(group) do
+        local key_1, key_2 = GetBindingKey(keybind)
+
+        if primary and key_1 then
+            SetBinding(key_1)
+        end
+
+        if secondary and key_2 then
+            SetBinding(key_2)
+        end
+    end
+end
 
 function auto_keybind.set_keybinds()
     local action_bars = {
