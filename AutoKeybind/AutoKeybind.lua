@@ -101,7 +101,8 @@ function auto_keybind.set_keybinds()
         "MULTIACTIONBAR1BUTTON",
         "MULTIACTIONBAR2BUTTON",
         "MULTIACTIONBAR3BUTTON",
-        "MULTIACTIONBAR4BUTTON"
+        "MULTIACTIONBAR4BUTTON",
+        "MULTIACTIONBAR5BUTTON"
     }
 
     local action_bar_index = 1
