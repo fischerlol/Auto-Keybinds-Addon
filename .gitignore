@@ -1,2 +1,4 @@
 /AutoKeybind.bat
-/.idea/
+.idea/
+*.iml
+out/
