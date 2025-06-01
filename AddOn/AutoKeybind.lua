@@ -13,7 +13,7 @@ action_bar_two = {
 }
 
 action_bar_three = {
-    'F1', 'F2', 'F3', 'ALT-NUMPAD1', 'SHIFT-G', 'F4', false, 'NUMPAD7', 'NUMPAD6', 'NUMPADDIVIDE','NUMPADMULTIPLY', false
+    'F1', 'F2', 'F3', 'ALT-NUMPAD1', 'SHIFT-G', 'F4', 'ALT-G', 'NUMPAD7', 'NUMPAD6', 'NUMPADDIVIDE', false, false
 }
 
 action_bar_four = {
@@ -24,12 +24,17 @@ action_bar_five = {
     'ALT-1', 'ALT-2', 'ALT-3', 'ALT-4', 'SHIFT-D', 'SHIFT-E', 'CTRL-E', 'CTRL-W', 'SHIFT-W', false, 'SHIFT-T', 'NUMPAD1'
 }
 
+action_bar_six = {
+    'CTRL-1', 'CTRL-2', 'CTRL-3', false, false, false, false, false, false, false, false, false
+}
+
 auto_keybind.bars = {
     action_bar_one,
     action_bar_two,
     action_bar_three,
     action_bar_four,
-    action_bar_five
+    action_bar_five,
+    action_bar_six,
 }
 
 action_paging = {
