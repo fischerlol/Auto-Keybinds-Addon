@@ -38,7 +38,7 @@ auto_keybind.bars = {
 }
 
 action_paging = {
-    'ACTIONPAGE1', 'ACTIONPAGE2', 'ACTIONPAGE3', 'ACTIONPAGE4', 'ACTIONPAGE5', 'PREVIOUSACTIONBAR', 'NEXTACTIONBAR'
+    'ACTIONPAGE1', 'ACTIONPAGE2', 'ACTIONPAGE3', 'ACTIONPAGE4', 'ACTIONPAGE5', 'ACTIONPAGE6', 'PREVIOUSACTIONBAR', 'NEXTACTIONBAR'
 }
 
 movement = {
@@ -101,7 +101,8 @@ function auto_keybind.set_keybinds()
         "MULTIACTIONBAR1BUTTON",
         "MULTIACTIONBAR2BUTTON",
         "MULTIACTIONBAR3BUTTON",
-        "MULTIACTIONBAR4BUTTON"
+        "MULTIACTIONBAR4BUTTON",
+        "MULTIACTIONBAR5BUTTON"
     }
 
     local action_bar_index = 1
@@ -114,5 +115,6 @@ function auto_keybind.set_keybinds()
         end
         action_bar_index = action_bar_index + 1
     end
+    SaveBindings(1)
     SaveBindings(2)
 end
